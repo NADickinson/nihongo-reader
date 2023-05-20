@@ -6,12 +6,8 @@
 // しかし、上級のコーディングは難しいすぎそうです。でも、諦めないで頑張ります。
 
 import React from 'react'
-
 // add readings
-//create array using objects all objects in 1 array, not named objects, that array is put into order and is returned in story
-//however array is mapped so each word is in its own div
-
-const introStoryArray = [
+export const introStoryArray = [
   {
     word: 'はじめまして',
     meaning: 'Nice to meet you',
@@ -222,7 +218,3 @@ const introStoryArray = [
     type: 'Verb',
   },
 ]
-
-introStoryArray.map(() => {
-  return
-})
