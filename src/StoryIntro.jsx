@@ -1,10 +1,14 @@
 import React from 'react'
-import row from './Row'
+import { introStoryArray } from './data.mjs'
 
-export const IntroStory = () => {
+export const StoryIntro = ({ word }) => {
+  const myArr = introStoryArray.map((obj) => {
+    return <div style={{ flexShrink: '0' }}>{obj.word}</div>
+  })
+
   return (
-    <row>
-      <div>{} </div>
-    </row>
+    <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '1000px' }}>
+      {myArr}
+    </div>
   )
 }

@@ -1,7 +1,13 @@
 import React from 'react'
+import { PageWrapper } from './pageWrapper'
+import { StoryIntro } from './StoryIntro'
 
 function App() {
-  return undefined
+  return (
+    <PageWrapper>
+      <StoryIntro />
+    </PageWrapper>
+  )
 }
 
 export default App
