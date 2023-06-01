@@ -1,12 +1,5 @@
-// はじめまして Nathan です。よろしくお願いします。
-// 僕の趣味は日本語勉強です。何人かによるとこの趣味ちょっとつまらないそうです。
-// でも、僕の毎日勉強することは本当に楽しいです。
-// また、上手になるためにたくさん漢字を書くようにしています。
-// 私のゴールはソフトを開発することです。ためこのにコーディング練習しています。
-// しかし、上級のコーディングは難しいすぎそうです。でも、諦めないで頑張ります。
-
 import React from 'react'
-// add readings
+
 export const introStoryArray = [
   {
     word: 'はじめまして',
@@ -203,10 +196,10 @@ export const introStoryArray = [
     id: 35,
   },
   {
-    word: '練習',
-    reading: 'れんしゅう',
-    meaning: 'Practice',
-    type: 'Noun',
+    word: '練習しています',
+    reading: 'れんしゅうしています',
+    meaning: 'Practice (progressive)',
+    type: 'verb',
     id: 36,
   },
   {
@@ -230,14 +223,14 @@ export const introStoryArray = [
     id: 39,
   },
   {
-    word: 'すぎる',
+    word: 'すぎ',
     meaning: 'Too much, to be excessive',
     type: 'Grammar',
     id: 40,
   },
   {
-    word: '諦める',
-    reading: 'あきらめる',
+    word: '諦め',
+    reading: 'あきらめ',
     meaning: 'To give up',
     type: 'Verb',
     id: 41,
@@ -255,4 +248,35 @@ export const introStoryArray = [
     type: 'Verb',
     id: 43,
   },
+  { word: 'Nathan', id: 44 },
 ]
+
+// はじめまして Nathan です。よろしくお願いします。
+// 僕の趣味は日本語勉強です。何人かによるとこの趣味ちょっとつまらないそうです。
+// でも、僕の毎日勉強することは本当に楽しいです。
+// また、上手になるためにたくさん漢字を書くようにしています。
+// 私のゴールはソフトを開発することです。ためこのにコーディング練習しています。
+// しかし、上級のコーディングは難しいすぎそうです。でも、諦めないで頑張ります。
+
+const introStoryArrayOfIds = [
+  1, 44, 2, 3, 4, 5, 6, 7, 8, 9, 2, 10, 11, 12, 6, 13, 14, 15, 16, 4, 5, 17, 9,
+  18, 19, 7, 20, 21, 2, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 5, 32, 7, 33,
+  28, 34, 18, 19, 2, 12, 32, 25, 35, 36, 37, 38, 5, 35, 7, 39, 40, 15, 16, 41,
+  42, 43,
+]
+
+const mappedIdArray = (idArray, storyArray) => {
+  return idArray.map((id) => {
+    const orderedArray = storyArray.filter((obj) => {
+      if (obj.id === id) {
+        return obj
+      } else return false
+    })
+    return orderedArray[0]
+  })
+}
+
+export const introStoryFinal = mappedIdArray(
+  introStoryArrayOfIds,
+  introStoryArray
+)

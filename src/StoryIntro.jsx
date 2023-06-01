@@ -1,9 +1,13 @@
 import React from 'react'
-import { introStoryArray } from './data.mjs'
+import { introStoryFinal } from './data.mjs'
 
-export const StoryIntro = ({ word }) => {
-  const myArr = introStoryArray.map((obj) => {
-    return <div style={{ flexShrink: '0' }}>{obj.word}</div>
+export const StoryIntro = () => {
+  const myArr = introStoryFinal.map((obj, i) => {
+    return (
+      <div key={i} style={{ flexShrink: '0' }}>
+        {obj.word}
+      </div>
+    )
   })
 
   return (
