@@ -57,7 +57,7 @@ export const introStoryArray = [
     word: '勉強',
     reading: 'べんきょう',
     meaning: 'Study',
-    type: 'noun',
+    type: 'Noun',
     id: 9,
   },
   {
@@ -199,7 +199,7 @@ export const introStoryArray = [
     word: '練習しています',
     reading: 'れんしゅうしています',
     meaning: 'Practice (progressive)',
-    type: 'verb',
+    type: 'Verb',
     id: 36,
   },
   {
