@@ -1,22 +1,21 @@
 import React from 'react'
-import { introStoryFinal } from './data.mjs'
+import { introStoryArray, introStoryFinal } from './data.mjs'
 import { Word } from './Word.jsx'
 import { useState } from 'react'
+import { WordInfo } from './WordInfo.jsx'
 
 export const StoryIntro = () => {
-  const [highlightedWordId, setHighLightedWordId] = useState('')
-  console.log(highlightedWordId)
+  const [highlightedWordIndex, setHighLightedWordIndex] = useState('')
+  console.log(highlightedWordIndex)
   const myArr = introStoryFinal.map((obj, i) => {
     return (
       <Word
-        highlightedWordID={highlightedWordId}
-        wordId={obj.id}
-        wordType={obj.type}
-        word={obj.word}
-        onSelectWord={() => {
-          setHighLightedWordId(obj.id)
-        }}
+        isSelected={highlightedWordIndex === i}
+        fullWordObject={obj}
         key={i}
+        onSelectWord={() => {
+          setHighLightedWordIndex(i)
+        }}
       />
     )
   })

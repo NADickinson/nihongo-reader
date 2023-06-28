@@ -1,29 +1,44 @@
-export const Word = ({
-  word,
-  onSelectWord,
-  wordType,
-  wordId,
-  highlightedWordID,
-}) => {
-  let color = ''
-  if (wordId !== highlightedWordID) {
-    color = ''
-  } else if (wordType === 'Set phrase') {
-    color = 'red'
-  } else if (wordType === 'Grammar') {
-    color = 'blue'
-  } else if (wordType === 'Noun') {
-    color = 'green'
-  } else if (wordType === 'Adverb') {
-    color = 'yellow'
-  } else if (wordType === 'Adjective') {
-    color = 'purple'
-  } else if (wordType === 'Verb') {
-    color = 'hotpink'
+import { WordInfo } from './WordInfo'
+
+const getColor = (wordType) => {
+  switch (wordType) {
+    case 'Set phrase':
+      return 'red'
+    case 'Grammar':
+      return 'blue'
+    case 'Noun':
+      return 'green'
+    case 'Adverb':
+      return 'yellow'
+    case 'Adjective':
+      return 'purple'
+    case 'Verb':
+      return 'hotpink'
+    default:
+      return ''
   }
+}
+
+export const Word = ({ onSelectWord, isSelected, fullWordObject }) => {
+  const { word, type: wordType } = fullWordObject
+  const color = isSelected ? getColor(wordType) : undefined
   return (
-    <div style={{ background: color }} onClick={onSelectWord}>
-      {word}
+    <div
+      style={{
+        position: 'relative',
+        zIndex: isSelected ? 1 : undefined,
+      }}
+    >
+      <div style={{ background: color }} onClick={onSelectWord}>
+        {word}
+      </div>
+      {isSelected ? (
+        <WordInfo
+          word={fullWordObject.word}
+          meaning={fullWordObject.meaning}
+          type={fullWordObject.type}
+        />
+      ) : undefined}
     </div>
   )
 }
