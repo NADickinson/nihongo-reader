@@ -1,5 +1,5 @@
 import React from 'react'
-import { introStoryArray, introStoryFinal } from './data.mjs'
+import { introStoryArray, introStoryFinal } from '../data/data.mjs'
 import { Word } from './Word.jsx'
 import { useState } from 'react'
 import { WordInfo } from './WordInfo.jsx'
@@ -10,6 +10,9 @@ export const StoryIntro = () => {
   const myArr = introStoryFinal.map((obj, i) => {
     return (
       <Word
+        deselect={() => {
+          setHighLightedWordIndex(undefined)
+        }}
         isSelected={highlightedWordIndex === i}
         fullWordObject={obj}
         key={i}
@@ -21,7 +24,14 @@ export const StoryIntro = () => {
   })
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '1000px' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        maxWidth: '1000px',
+        rowGap: '1rem',
+      }}
+    >
       {myArr}
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Column = ({ gap, children, justify, align }) => {
+export const Column = ({ gap, children, justify, align, flexGrow }) => {
   return (
     <div
       style={{
@@ -8,7 +8,8 @@ export const Column = ({ gap, children, justify, align }) => {
         flexDirection: 'column',
         justifyContent: justify,
         alignItems: align,
-        gap: gap,
+        gap,
+        flexGrow,
       }}
     >
       {children}
