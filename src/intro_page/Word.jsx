@@ -32,6 +32,7 @@ export const Word = ({
       style={{
         position: 'relative',
         zIndex: isSelected ? 1 : undefined,
+        cursor: 'pointer',
       }}
     >
       <div style={{ color: '#eee', background: color }} onClick={onSelectWord}>

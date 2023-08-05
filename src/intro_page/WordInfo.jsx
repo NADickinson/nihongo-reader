@@ -17,6 +17,7 @@ export const WordInfo = ({ word, meaning, type, deselect }) => {
         maxWidth: '300px',
         border: '1px solid #B5ADB7',
         borderRadius: '0.5rem',
+        cursor: 'default',
       }}
     >
       <div
