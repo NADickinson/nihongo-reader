@@ -9,7 +9,7 @@ const getColor = (wordType) => {
     case 'Noun':
       return 'green'
     case 'Adverb':
-      return 'yellow'
+      return 'orange'
     case 'Adjective':
       return 'purple'
     case 'Verb':
