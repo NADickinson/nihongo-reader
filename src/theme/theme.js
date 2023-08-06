@@ -1,1 +1,1 @@
-export const redColor = '#800C0F'
+export const redColor = '#B53A3A'
