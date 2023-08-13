@@ -8,7 +8,7 @@ export const PageWrapper = (props) => {
         flexDirection: 'column',
         position: 'fixed',
         inset: '0 0 0 0',
-        backgroundColor: '#08090A',
+        backgroundColor: '#040825',
       }}
     >
       {props.children}
