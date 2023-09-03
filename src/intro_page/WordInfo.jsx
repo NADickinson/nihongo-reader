@@ -1,6 +1,6 @@
 import { CrossIcon } from '../theme/Icons'
 import { redColor } from '../theme/theme'
-export const WordInfo = ({ word, meaning, type, deselect }) => {
+export const WordInfo = ({ word, reading, meaning, type, deselect }) => {
   const closeBox = () => {
     deselect()
   }
@@ -33,6 +33,7 @@ export const WordInfo = ({ word, meaning, type, deselect }) => {
           <CrossIcon color={redColor} size={'24px'} />
         </div>
       </div>
+      <div style={{ color: 'white' }}>{reading}</div>
       <div style={{ color: 'white' }}>{meaning}</div>
       <div style={{ color: 'white' }}>{type}</div>
     </div>

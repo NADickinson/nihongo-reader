@@ -27,6 +27,21 @@ export const Word = ({
 }) => {
   const { word, type: wordType } = fullWordObject
   const color = isSelected ? getColor(wordType) : undefined
+  const isWordFiller = () => {
+    if (fullWordObject.word === ':') {
+      return undefined
+    } else {
+      return (
+        <WordInfo
+          deselect={deselect}
+          word={fullWordObject.word}
+          reading={fullWordObject.reading}
+          meaning={fullWordObject.meaning}
+          type={fullWordObject.type}
+        />
+      )
+    }
+  }
   return (
     <div
       style={{
@@ -38,14 +53,7 @@ export const Word = ({
       <div style={{ color: '#eee', background: color }} onClick={onSelectWord}>
         {word}
       </div>
-      {isSelected ? (
-        <WordInfo
-          deselect={deselect}
-          word={fullWordObject.word}
-          meaning={fullWordObject.meaning}
-          type={fullWordObject.type}
-        />
-      ) : undefined}
+      {isSelected ? isWordFiller() : undefined}
     </div>
   )
 }
