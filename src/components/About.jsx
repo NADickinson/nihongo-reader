@@ -1,6 +1,6 @@
 import { CrossIcon } from '../theme/Icons'
 import { redColor } from '../theme/theme'
-export const About = ({ text, deselect }) => {
+export const About = ({ aboutDescription, deselect }) => {
   return (
     <div
       style={{
@@ -15,7 +15,7 @@ export const About = ({ text, deselect }) => {
         top: '100px',
       }}
     >
-      <div>{text}</div>
+      <div>{aboutDescription}</div>
       <div
         onClick={() => {
           deselect()

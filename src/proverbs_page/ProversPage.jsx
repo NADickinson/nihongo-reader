@@ -1,18 +1,18 @@
-import { Column } from '../components/Column'
-import { PageHeader } from './PageHeader'
-import { StoryIntro } from './StoryIntro'
 import { PageWrapper } from '../components/PageWrapper'
-import { ColourChart } from '../components/ColourChart'
+import { PageHeader } from '../intro_page/PageHeader'
+import { Column } from '../components/Column'
 import { SideBar } from '../components/SideBar'
 import { useState } from 'react'
+import { ColourChart } from '../components/ColourChart'
+import { StoryProverbs } from './storyProverbs'
 
-export const IntroPage = () => {
+export const ProverbsPage = () => {
   const [hasClicked, setHasClicked] = useState(false)
   return (
     <PageWrapper>
       <PageHeader
         aboutDescription={
-          'This is an intro about the author (Nathan), detailing his passions and goals in his life, I hope you enjoy!'
+          'This is a list of some grear Japanese proverbs! enjoy!'
         }
       />
       <Column justify="center" align="center" flexGrow="1">
@@ -25,8 +25,9 @@ export const IntroPage = () => {
         >
           <ColourChart height={'15px'} width={'15px'} padding={'10px'} />
         </SideBar>
-        <StoryIntro />
+        <StoryProverbs />
       </Column>
     </PageWrapper>
   )
 }
+// TODO: ADD WHITE SPACE INTO ARRAYS FOR SPACING

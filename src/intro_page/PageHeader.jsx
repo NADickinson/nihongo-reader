@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { SubmissionMessage } from '../components/SubmissionMessage'
 import { About } from '../components/About'
 
-export const PageHeader = (props) => {
+export const PageHeader = ({ children, aboutDescription }) => {
   const [hasRated, setHasRated] = useState(false)
 
   useEffect(() => {
@@ -71,16 +71,14 @@ export const PageHeader = (props) => {
 
       {aboutIsClicked ? (
         <About
-          text={
-            'This is an intro about the author (Nathan), detailing his passions and goals in his life, I hope you enjoy!'
-          }
+          aboutDescription={aboutDescription}
           deselect={() => {
             setAboutIsClicked(false)
           }}
         />
       ) : undefined}
 
-      {props.children}
+      {children}
     </div>
   )
 }
