@@ -9,6 +9,7 @@ export const ColourChart = ({ height, width, padding }) => {
         minWidth: '100px',
         display: 'flex',
         flexDirection: 'column',
+        minHeight: '330px',
       }}
     >
       <div id={'Set phrase'} style={{ padding: padding }}>
