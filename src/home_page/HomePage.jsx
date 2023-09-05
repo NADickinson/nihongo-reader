@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom'
 import { PageWrapper } from '../components/PageWrapper'
 import { HomePageHeader } from './HomePageHeader'
 import { Column } from '../components/Column'
+import { Row } from '../components/Row'
 
 export const HomePage = () => {
   return (
     <PageWrapper>
       <HomePageHeader />
-      <Column align={'center'}>
+
+      <Row align={'center'} justify={'center'}>
         <Link to={'/intro'} style={{ textDecoration: 'none' }}>
           <div
             style={{
@@ -52,14 +54,13 @@ export const HomePage = () => {
               {' Japanese Proverbs'}
             </div>
             <img
-              style={{ maxWidth: '600px', padding: '30px' }}
+              style={{ maxWidth: '600px', padding: '40px' }}
               src="https://cdn.pixabay.com/photo/2015/07/27/20/16/book-863418_1280.jpg"
               alt=""
             />
           </div>
         </Link>
-      </Column>
+      </Row>
     </PageWrapper>
   )
 }
-//TODO: SCROLL OR NOT TO SCROLL? ALSO FIX DIV ORDERING ABOVE.
