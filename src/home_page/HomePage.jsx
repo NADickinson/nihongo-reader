@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageWrapper } from '../components/PageWrapper'
 import { HomePageHeader } from './HomePageHeader'
-import { Column } from '../components/Column'
 import { Row } from '../components/Row'
 
 export const HomePage = () => {
@@ -10,7 +9,7 @@ export const HomePage = () => {
       <HomePageHeader />
 
       <Row align={'center'} justify={'center'}>
-        <Link to={'/intro'} style={{ textDecoration: 'none' }}>
+        <Link to={'/Stories/intro'} style={{ textDecoration: 'none' }}>
           <div
             style={{
               display: 'flex',
@@ -35,7 +34,7 @@ export const HomePage = () => {
             />
           </div>
         </Link>
-        <Link to={'/Proverbs'} style={{ textDecoration: 'none' }}>
+        <Link to={'/Stories/proverbs'} style={{ textDecoration: 'none' }}>
           <div
             style={{
               display: 'flex',

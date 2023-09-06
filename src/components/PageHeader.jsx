@@ -1,10 +1,10 @@
 import { redColor } from '../theme/theme'
-import { CustomButton } from '../components/CustomButton'
+import { CustomButton } from './CustomButton'
 import { useEffect, useState } from 'react'
 import { RatingScale } from './RatingScale'
 import { Link } from 'react-router-dom'
-import { SubmissionMessage } from '../components/SubmissionMessage'
-import { About } from '../components/About'
+import { SubmissionMessage } from './SubmissionMessage'
+import { About } from './About'
 
 export const PageHeader = ({ children, aboutDescription }) => {
   const [hasRated, setHasRated] = useState(false)

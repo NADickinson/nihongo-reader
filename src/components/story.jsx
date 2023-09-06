@@ -1,13 +1,10 @@
-import React from 'react'
-import { introStoryArray, introStoryFinal } from '../data/data.mjs'
-import { Word } from '../components/Word.jsx'
 import { useState } from 'react'
-import { WordInfo } from '../components/WordInfo.jsx'
+import { Word } from './Word'
 
-export const StoryIntro = () => {
+export const Story = ({ story }) => {
   const [highlightedWordIndex, setHighLightedWordIndex] = useState('')
-  console.log(highlightedWordIndex)
-  const myArr = introStoryFinal.map((obj, i) => {
+
+  const myArr = story.map((obj, i) => {
     return (
       <Word
         deselect={() => {

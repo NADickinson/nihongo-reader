@@ -1,22 +1,29 @@
 import { Column } from '../components/Column'
 import { PageHeader } from '../components/PageHeader'
-import { StoryIntro } from './StoryIntro'
 import { PageWrapper } from '../components/PageWrapper'
 import { ColourChart } from '../components/ColourChart'
 import { SideBar } from '../components/SideBar'
 import { useState } from 'react'
 import { Story } from '../components/story'
-import { introStoryFinal } from '../data/data.mjs'
+import { ProverbStoryFinal, introStoryFinal } from '../data/data.mjs'
+import { useParams } from 'react-router-dom'
 
-export const IntroPage = () => {
+const getDescription = (storyId) => {
+  if (storyId === 'intro') {
+    return 'This is an intro about the author (Nathan), detailing his passions and goals in his life, I hope you enjoy!'
+  } else {
+    return 'This is a list of some grear Japanese proverbs! enjoy!'
+  }
+}
+
+export const StoryPage = () => {
   const [hasClicked, setHasClicked] = useState(false)
+  const storyId = useParams().storyId
+  const story = storyId === 'intro' ? introStoryFinal : ProverbStoryFinal
+
   return (
     <PageWrapper>
-      <PageHeader
-        aboutDescription={
-          'This is an intro about the author (Nathan), detailing his passions and goals in his life, I hope you enjoy!'
-        }
-      />
+      <PageHeader aboutDescription={getDescription(storyId)} />
       <Column justify="center" align="center" flexGrow="1">
         <SideBar
           height={'321px'}
@@ -27,7 +34,7 @@ export const IntroPage = () => {
         >
           <ColourChart height={'15px'} width={'15px'} padding={'10px'} />
         </SideBar>
-        <Story story={introStoryFinal} />
+        <Story story={story} />
       </Column>
     </PageWrapper>
   )

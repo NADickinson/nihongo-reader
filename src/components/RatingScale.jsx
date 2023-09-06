@@ -1,4 +1,4 @@
-import { StarRating } from '../components/StarRating'
+import { StarRating } from './StarRating'
 
 export const RatingScale = ({ text, onStarRating }) => {
   return (

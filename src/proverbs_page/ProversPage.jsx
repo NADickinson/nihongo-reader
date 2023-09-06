@@ -1,10 +1,12 @@
 import { PageWrapper } from '../components/PageWrapper'
-import { PageHeader } from '../intro_page/PageHeader'
+import { PageHeader } from '../components/PageHeader'
 import { Column } from '../components/Column'
 import { SideBar } from '../components/SideBar'
 import { useState } from 'react'
 import { ColourChart } from '../components/ColourChart'
 import { StoryProverbs } from './storyProverbs'
+import { Story } from '../components/story'
+import { ProverbStoryFinal } from '../data/data.mjs'
 
 export const ProverbsPage = () => {
   const [hasClicked, setHasClicked] = useState(false)
@@ -25,7 +27,7 @@ export const ProverbsPage = () => {
         >
           <ColourChart height={'15px'} width={'15px'} padding={'10px'} />
         </SideBar>
-        <StoryProverbs />
+        <Story story={ProverbStoryFinal} />
       </Column>
     </PageWrapper>
   )

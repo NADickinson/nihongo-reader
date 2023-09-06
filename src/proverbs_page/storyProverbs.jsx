@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ProverbStoryFinal } from '../data/data.mjs'
-import { Word } from '../intro_page/Word'
+import { Word } from '../components/Word'
 
 export const StoryProverbs = () => {
   const [highlightedWordIndex, setHighLightedWordIndex] = useState('')
