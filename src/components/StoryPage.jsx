@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { Story } from '../components/story'
 import { ProverbStoryFinal, introStoryFinal } from '../data/data.mjs'
 import { useParams } from 'react-router-dom'
+import { getStory } from '../Api/getStory'
 
 const getDescription = (storyId) => {
   if (storyId === 'intro') {
@@ -19,7 +20,7 @@ const getDescription = (storyId) => {
 export const StoryPage = () => {
   const [hasClicked, setHasClicked] = useState(false)
   const storyId = useParams().storyId
-  const story = storyId === 'intro' ? introStoryFinal : ProverbStoryFinal
+  const story = getStory(storyId)
 
   return (
     <PageWrapper>
